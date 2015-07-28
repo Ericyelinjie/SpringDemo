@@ -9,6 +9,9 @@
     <module>SprintTest</module>
     <module>SpringWebMVCDemo</module>
     <module>SpringBoot</module>
+    <module>SpringBootJPA</module>
+    <module>SpringBootJPA</module>
+    <module>SpringBootJPA</module>
   </modules>
   <name>com.tuzhihao Maven Webapp</name>
   <url>http://maven.apache.org</url>
