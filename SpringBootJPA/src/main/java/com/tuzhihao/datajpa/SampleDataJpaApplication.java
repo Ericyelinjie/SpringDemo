@@ -2,7 +2,7 @@ package com.tuzhihao.datajpa;
 
 /**
  * Created by Methol on 2015-07-28.
- * 主函数入口
+ * 程序启动类
  */
 
 import org.springframework.boot.SpringApplication;
