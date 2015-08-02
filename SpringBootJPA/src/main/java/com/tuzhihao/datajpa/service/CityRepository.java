@@ -10,9 +10,9 @@ package com.tuzhihao.datajpa.service;
 import com.tuzhihao.datajpa.domain.City;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-interface CityRepository extends Repository<City, Long> {
+interface CityRepository extends JpaRepository<City, Long> {
 
     Page<City> findAll(Pageable pageable);
 
@@ -20,4 +20,8 @@ interface CityRepository extends Repository<City, Long> {
 
     City findByNameAndCountryAllIgnoringCase(String name, String country);
 
+    City findByNameAllIgnoringCase(String name);
+
+    @Override
+    <S extends City> S saveAndFlush(S entity);
 }

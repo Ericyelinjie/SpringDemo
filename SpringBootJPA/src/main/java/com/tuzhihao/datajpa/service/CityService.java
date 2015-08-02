@@ -2,6 +2,7 @@ package com.tuzhihao.datajpa.service;
 
 /**
  * Created by Methol on 2015-07-28.
+ *
  */
 
 import com.tuzhihao.datajpa.domain.City;
@@ -13,8 +14,14 @@ public interface CityService {
 
     Page<City> findCities(CitySearchCriteria criteria, Pageable pageable);
 
+    Page<City> findAllCities(Pageable pageable);
+
     City getCity(String name, String country);
 
+    City getCity(String name);
+
     Page<HotelSummary> getHotels(City city, Pageable pageable);
+
+    City save(City city);
 
 }

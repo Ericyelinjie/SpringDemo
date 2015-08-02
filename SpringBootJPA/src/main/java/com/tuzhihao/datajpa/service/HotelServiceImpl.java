@@ -2,6 +2,7 @@ package com.tuzhihao.datajpa.service;
 
 /**
  * Created by Methol on 2015-07-28.
+ *
  */
 
 import com.tuzhihao.datajpa.domain.*;

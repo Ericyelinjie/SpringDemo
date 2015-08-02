@@ -35,7 +35,8 @@ class CityServiceImpl implements CityService {
         String name = criteria.getName();
 
         if (!StringUtils.hasLength(name)) {
-            return this.cityRepository.findAll(null);
+//            return this.cityRepository.findAll(null);
+            return null;
         }
 
         String country = "";
@@ -52,6 +53,11 @@ class CityServiceImpl implements CityService {
     }
 
     @Override
+    public Page<City> findAllCities(Pageable pageable) {
+        return this.cityRepository.findAll(pageable);
+    }
+
+    @Override
     public City getCity(String name, String country) {
         Assert.notNull(name, "Name must not be null");
         Assert.notNull(country, "Country must not be null");
@@ -59,8 +65,19 @@ class CityServiceImpl implements CityService {
     }
 
     @Override
+    public City getCity(String name) {
+        Assert.notNull(name, "Name must not be null");
+        return this.cityRepository.findByNameAllIgnoringCase(name);
+    }
+
+    @Override
     public Page<HotelSummary> getHotels(City city, Pageable pageable) {
         Assert.notNull(city, "City must not be null");
         return this.hotelRepository.findByCity(city, pageable);
+    }
+
+    @Override
+    public City save(City city) {
+        return this.cityRepository.saveAndFlush(city);
     }
 }
