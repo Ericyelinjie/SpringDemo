@@ -54,6 +54,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/spring/pom.xml" />
       </set>
     </option>
   </component>

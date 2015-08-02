@@ -12,6 +12,7 @@
     <module>SpringBootJPA</module>
     <module>SpringBootJPA</module>
     <module>SpringBootJPA</module>
+    <module>spring</module>
   </modules>
   <name>com.tuzhihao Maven Webapp</name>
   <url>http://maven.apache.org</url>
