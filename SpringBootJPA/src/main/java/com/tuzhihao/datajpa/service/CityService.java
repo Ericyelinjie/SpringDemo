@@ -24,4 +24,5 @@ public interface CityService {
 
     City save(City city);
 
+    void delete (String city);
 }

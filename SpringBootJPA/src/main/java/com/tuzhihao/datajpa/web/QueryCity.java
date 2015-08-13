@@ -5,7 +5,6 @@ package com.tuzhihao.datajpa.web;
  * 查询城市类
  * http://localhost:8080/city/Bath
  */
-
 import com.tuzhihao.datajpa.domain.City;
 import com.tuzhihao.datajpa.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +42,7 @@ public class QueryCity {
     @RequestMapping("/all/{page}/{size}")
     @ResponseBody
     @Transactional(readOnly = true)
-    public String findAllCities(@PathVariable("page") String page, @PathVariable("size") String size) {
+    public String getCity(@PathVariable("page") String page, @PathVariable("size") String size) {
         PageRequest pageRequest = new PageRequest(Integer.parseInt(page), Integer.parseInt(size));  //查询第1页，5条数据
         Page<City> p = this.cityService.findAllCities(pageRequest);
         StringBuilder sb = new StringBuilder("");
@@ -59,6 +58,17 @@ public class QueryCity {
         }
         return sb.toString();
     }
+
+    /**
+     * 根据name查询City
+     *    @RequestMapping("/items/{name}")
+     @ResponseBody
+     public City getCity(@PathVariable("name") String name){
+     return this.cityService.getCity(name);
+     }
+     * */
+
+
 
 //    可以直接根据对象注入进去
 //    @RequestMapping("/list") /city/list?p1=xx&p2=xx&p3=22

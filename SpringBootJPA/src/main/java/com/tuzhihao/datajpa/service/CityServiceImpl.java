@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 @Transactional
 class CityServiceImpl implements CityService {
 
+
     private final CityRepository cityRepository;
 
     private final HotelRepository hotelRepository;
@@ -35,7 +36,6 @@ class CityServiceImpl implements CityService {
         String name = criteria.getName();
 
         if (!StringUtils.hasLength(name)) {
-//            return this.cityRepository.findAll(null);
             return null;
         }
 
@@ -79,5 +79,9 @@ class CityServiceImpl implements CityService {
     @Override
     public City save(City city) {
         return this.cityRepository.saveAndFlush(city);
+    }
+    @Override
+    public void delete(String city) {
+         this.cityRepository.delete(getCity(city));
     }
 }

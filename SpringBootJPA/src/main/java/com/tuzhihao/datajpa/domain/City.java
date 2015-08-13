@@ -40,7 +40,12 @@ public class City implements Serializable {
         this.name = name;
         this.country = country;
     }
-
+    public City(String name,String state, String country) {
+        super();
+        this.name = name;
+        this.state = state;
+        this.country = country;
+    }
     public String getName() {
         return this.name;
     }
